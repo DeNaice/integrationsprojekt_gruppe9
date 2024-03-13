@@ -1,0 +1,211 @@
+### User wird erstellt
+
+POST /register HTTP/2
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "Email": "dennis.krs@hotmail.de",
+  "Geschlecht": "Männlich",
+  "Vorname": "Dennis",
+  "Nachname": "Krs",
+  "Bio": "Ich bins eins Dennis ich baue nützliche Gegenstände aus ansonsten nutzlosen Gegenständen und bringe euch gerne bei wir ihr das auch könnt",
+  "Straße": "Recyclinghofstraße ",
+  "Hausnummer":"31a",
+  "PLZ": "4Ab0664",
+  "Rezension": "Befriedigend",
+  "Passwort": "Dilara_Shishabar",
+  "Id_Rolle": "2"
+}
+
+### weiterer User wird erstellt
+
+POST /register HTTP/2
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "Email": "ophelia@sanders@gmail.com",
+  "Geschlecht": "Weiblich",
+  "Vorname": "Ophelia",
+  "Nachname": "Sanders",
+  "Bio": "",
+  "Straße": "Olaschiicastraße ",
+  "Hausnummer":"7d",
+  "PLZ": "06021",
+  "Rezension": "Sehr gut",
+  "Passwort": "Kunst_ist_Magie",
+  "Id_Rolle": "1"
+}
+### Fehlerhaftes erstellen eines Users
+
+POST /register HTTP/2
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "Email": "dennis.krs@hotmail.de",
+  "Geschlecht": "Männlich",
+  "Vorname": "Dennis",
+  "Nachname": "Krs",
+  "Bio": "Ich bins eins Dennis ich baue nützliche Gegenstände aus ansonsten nutzlosen Gegenständen und bringe euch gerne bei wir ihr das auch könnt",
+  "Straße": "Recyclinghofstraße ",
+  "Hausnummer":"31a",
+  "PLZ": "4Ab0664",
+  "Rezension": "Befriedigend",
+  "Passwort": "",
+  "Id_Rolle": "2"
+}
+
+### Creator wird gelesen
+
+GET /userNames HTTP/2
+Host: localhost:8080
+Content-Type: application/json
+
+{
+   "Email": "dennis.krs@hotmail.de"
+}
+
+### User wird gelesen
+
+GET /userNames HTTP/2
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "Email": "ophelia.sanders@gmail.com"
+}
+### User wird fehlerhaft ausgelesen gelesen
+
+GET /userNames HTTP/2
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "Email": "dennis.krs@ratatatat.de"
+}
+
+### Bearbeiten des Users
+
+PUT /editUser HTTP/2
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "Email": "dennis.krs@hotmail.de",
+"Vorname": "Klaus",
+  "Nachname": "Schmidt",
+  "Bio": "Meine Biographie ist langweilig"
+}
+
+### Fehlerhaftes  Bearbeiten des Users
+
+PUT /editUser HTTP/2
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "Email": "dennssis.krs@hotmail.de",
+  "Vorname": "Klaus",
+  "Nachname": "",
+  "Bio": "Meine Biographie ist langweilig"
+}
+
+### Rolle ziehen
+
+GET /checkRolle HTTP/2
+Host: localhost:8080
+Content-Type: application/json
+
+{
+"Email": "dennis.krs@hotmail.de"
+}
+### Fehlerhaftes Rolle ziehen
+
+GET /checkRolle HTTP/2
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "Email": "dennisadadad.krs@hotmail.de"
+}
+
+### Löschen des Users
+
+DELETE /deleteUser HTTP/2
+Host: localhost:8080
+Content-Type: application/json
+
+{
+"Email": "dennis.krs@hotmail.de"
+}
+
+### Poste Workshop
+
+POST /erstellenn HTTP/2
+Host: localhost:8080
+Content-Type: application/json
+
+{
+"Email": "dennis.krs@hotmail.de",
+  "Titel": "Das ist der Titel des Workshops",
+  "Art": "Künstlerisch",
+  "Preis": 35,
+  "Termin": "Termin",
+  "Ort": "Bei mir zuhause",
+  "Workshop_Dauer": "Ungefähr 3 Stunden",
+  "UberCreator": "Hier babbel ich bisschen über mich selbst",
+  "Geeignet": "Ist für freigeister creative Menschen und all diese leute da ",
+  "Beschreibung": "Wir machen aus alten Gegenständen Farbe und daraus malen wir ein wunderwunderwunderschönes Bild"
+}
+
+### Fehlerhaftes Poste Workshop
+
+POST /erstellenn HTTP/2
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "Email": "dennis.krs@hotmail.de",
+  "Titel": "Das ist der Titel des Workshops",
+  "Art": "Künstlerisch",
+  "Preis": SChauen wir mal,
+  "Termin": "Termin",
+  "Ort": "Bei mir zuhause",
+  "Workshop_Dauer": "Ungefähr 3 Stunden",
+  "UberCreator": "Hier babbel ich bisschen über mich selbst",
+  "Geeignet": "Ist für freigeister creative Menschen und all diese leute da ",
+  "Beschreibung": "Wir machen aus alten Gegenständen Farbe und daraus malen wir ein wunderwunderwunderschönes Bild"
+}
+
+### Ändere Workshop
+
+PUT /editWorkshop/1 HTTP/2
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "Titel": "Skjaa",
+  "Art": "RUTUTUTUT",
+  "Preis": 21,
+  "Termin": "ABFAHRT",
+  "Ort": "In da Bar a bissl saufn",
+  "Workshop_Dauer": "da ganze nacht",
+  "UberCreator": "ja moooin ich weise niet was ich da rein schreiben soll",
+  "Geeignet": "ist für jedermann geeignet",
+  "Beschreibung": "Ai ja komm doch einfach vorbei und finde es alleine heraus"
+
+}
+
+### Lösche Workshop
+
+DELETE /deleteWorkshop/1 HTTP/2
+Host: localhost:8080
+Content-Type: application/json
+
+{
+"Id_Workshop": 1
+
+}
+

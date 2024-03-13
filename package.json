@@ -1,0 +1,17 @@
+{
+  "name": "",
+  "version": "",
+  "description": "GANGGANGGANGGANGGANG",
+  "author": "Gang",
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/express": "^4.17.11",
+    "@types/express-session": "1.17.0",
+    "@types/mysql": "^2.15.18",
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "express-sessions": "^1.0.6",
+    "mysql": "^2.18.1"
+  }
+}
